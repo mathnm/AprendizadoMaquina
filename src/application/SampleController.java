@@ -67,16 +67,10 @@ public class SampleController {
 			roupaLisa.setText(""+caracteristicas[0]);
 			cabeloLisa.setText(""+caracteristicas[1]);
 			sapatoLisa.setText(""+caracteristicas[2]);
+			
 			cabeloNed.setText(""+caracteristicas[3]);
 			sueterNed.setText(""+caracteristicas[4]);
 			camisaNed.setText(""+caracteristicas[5]);
-			
-			/* caracteristicas[0] = roupaLaranjaLisa;
-        caracteristicas[1] = cabeloAmareloLisa;
-        caracteristicas[2] = sapatoLaranjaLisa;
-        caracteristicas[3] = cabeloMarromNed;
-        caracteristicas[4] = sueterVerdeNed;
-        caracteristicas[5] = camisaRosaNed;*/
 			
 //			System.out.println("chance de ser lisa: "+bayes[0]);
 //			System.out.println("chance de ser ned: "+bayes[1]);

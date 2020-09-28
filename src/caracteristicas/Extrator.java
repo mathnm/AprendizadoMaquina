@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import org.opencv.core.Mat;
-import org.opencv.highgui.HighGui;
 import org.opencv.imgcodecs.Imgcodecs;
 
 import javafx.scene.image.Image;
@@ -93,12 +92,6 @@ public static double[] extraiCaracteristicas(File f) {
         caracteristicas[5] = camisaRosaNed;
         //APRENDIZADO SUPERVISIONADO - JÁ SABE QUAL A CLASSE NAS IMAGENS DE TREINAMENTO
         caracteristicas[6] = f.getName().charAt(4)=='1'?1:0;
-		
-//		HighGui.imshow("Imagem original", imagemOriginal);
-//		HighGui.imshow("Imagem processada", imagemProcessada);
-//        
-//        HighGui.waitKey(0);
-        
 		return caracteristicas;
 	}
 	
@@ -202,10 +195,8 @@ public static double[] extraiCaracteristicas(File f) {
 	public static double[] naiveBayes(double[]caracteristicas) {
 		double[] retorno = {0,0};
 		try {
-			//*******carregar arquivo de características
 			DataSource ds = new DataSource("caracteristicas.arff");
 			Instances instancias = ds.getDataSet();
-			//instancias.setClassIndex(6);
 			instancias.setClassIndex(instancias.numAttributes()-1);
 			
 			//Classifica com base nas características da imagem selecionada
