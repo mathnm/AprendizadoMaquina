@@ -3,8 +3,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -12,20 +14,41 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="544.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+<BorderPane prefHeight="627.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <top>
-      <HBox BorderPane.alignment="CENTER">
+      <HBox prefHeight="73.0" prefWidth="606.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#extrairCaracteristicas" text="Extrai Caracteristicas Base Treinamento">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#selecionaImagem" text="Seleciona Imagem">
+            <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#selecionaImagem" text="Analisar">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Button>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="algBayes" mnemonicParsing="false" text="Bayes">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="algoritmo" />
+                     </toggleGroup>
+                  </RadioButton>
+               </children>
+            </VBox>
+            <VBox layoutX="365.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="algJ48" mnemonicParsing="false" text="J48" toggleGroup="$algoritmo">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </RadioButton>
+               </children>
+            </VBox>
          </children>
       </HBox>
    </top>
@@ -45,6 +68,9 @@
                </content>
             </ScrollPane>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </HBox>
    </center>
    <bottom>
