@@ -5,10 +5,8 @@ import java.text.DecimalFormat;
 
 import caracteristicas.Extrator;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -102,11 +100,6 @@ public class SampleController {
 				sueterNed.setText(""+caracteristicas[4]);
 				camisaNed.setText(""+caracteristicas[5]);
 				
-			} else {
-				Alert alert = new Alert(AlertType.ERROR);
-	    		alert.setTitle("Erro!");
-	    		alert.setHeaderText("Nenhum algoritmo selecionado.");
-	    		alert.setContentText("Selecione um algoritmo.");
 			}
 			
 		}
